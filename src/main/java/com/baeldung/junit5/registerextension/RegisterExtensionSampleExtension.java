@@ -3,8 +3,6 @@ package com.baeldung.junit5.registerextension;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * This extension is meant to demonstrate the use of RegisterExtension.
@@ -12,7 +10,6 @@ import org.slf4j.LoggerFactory;
 public class RegisterExtensionSampleExtension implements BeforeAllCallback, BeforeEachCallback {
 
     private final String type;
-    Logger logger = LoggerFactory.getLogger(RegisterExtensionSampleExtension.class);
 
     public RegisterExtensionSampleExtension(String type) {
         this.type = type;
@@ -20,12 +17,12 @@ public class RegisterExtensionSampleExtension implements BeforeAllCallback, Befo
 
     @Override
     public void beforeAll(ExtensionContext extensionContext) throws Exception {
-        logger.debug("Type {} In beforeAll : {}", type, extensionContext.getDisplayName());
+        System.out.println("Type " + type + " In beforeAll : " + extensionContext.getDisplayName());
     }
 
     @Override
     public void beforeEach(ExtensionContext extensionContext) throws Exception {
-        logger.debug("Type {} In beforeEach : {}", type, extensionContext.getDisplayName());
+        System.out.println("Type " + type + " In beforeEach : " + extensionContext.getDisplayName());
     }
 
     public String getType() {
