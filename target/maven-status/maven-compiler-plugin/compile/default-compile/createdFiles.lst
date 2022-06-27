@@ -1,0 +1,3 @@
+com\baeldung\junit5\templates\UserIdGenerator.class
+com\baeldung\junit5\templates\UserIdGeneratorImpl.class
+com\baeldung\junit5\registerextension\RegisterExtensionSampleExtension.class
