@@ -8,12 +8,14 @@
     <name>junit5-annotations</name>
     <description>Intro to JUnit 5</description>
 
+    <!--
     <parent>
         <groupId>com.baeldung</groupId>
         <artifactId>testing-modules</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-
+    -->
+    
     <dependencies>
         <dependency>
             <groupId>org.junit.platform</groupId>
