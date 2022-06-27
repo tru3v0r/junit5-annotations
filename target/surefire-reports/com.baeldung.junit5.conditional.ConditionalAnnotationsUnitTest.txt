@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.baeldung.junit5.conditional.ConditionalAnnotationsUnitTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 2, Time elapsed: 0.056 sec - in com.baeldung.junit5.conditional.ConditionalAnnotationsUnitTest
