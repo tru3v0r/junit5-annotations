@@ -20,7 +20,7 @@ public class DynamicCalculatorUnitTest {
     public Collection<DynamicTest> dynamicCalculatorTestCollection() {
         return Arrays.asList(
                 dynamicTest("Addition", () -> assertEquals(4, Math.addExact(2, 2))),
-                dynamicTest("Multiplication", () -> assertEquals(8, Math.multiplyExact(2, 6))),
+                dynamicTest("Multiplication", () -> assertEquals(12, Math.multiplyExact(2, 6))),
                 dynamicTest("Subtraction", () -> assertEquals(6, Math.subtractExact(10, 4))),
                 dynamicTest("Division", () -> assertEquals(5, 10/2))
         );
@@ -30,7 +30,7 @@ public class DynamicCalculatorUnitTest {
     Iterable<DynamicTest> dynamicCalculatorTestIterable() {
         return Arrays.asList(
                 dynamicTest("Addition", () -> assertEquals(4, Math.addExact(2, 2))),
-                dynamicTest("Multiplication", () -> assertEquals(8, Math.multiplyExact(2, 6))),
+                dynamicTest("Multiplication", () -> assertEquals(12, Math.multiplyExact(2, 6))),
                 dynamicTest("Subtraction", () -> assertEquals(6, Math.subtractExact(10, 4))),
                 dynamicTest("Division", () -> assertEquals(5, 10/2))
         );
@@ -40,7 +40,7 @@ public class DynamicCalculatorUnitTest {
     Iterator<DynamicTest> dynamicCalculatorTestIterator() {
         return Arrays.asList(
                 dynamicTest("Addition", () -> assertEquals(4, Math.addExact(2, 2))),
-                dynamicTest("Multiplication", () -> assertEquals(8, Math.multiplyExact(2, 6))),
+                dynamicTest("Multiplication", () -> assertEquals(12, Math.multiplyExact(2, 6))),
                 dynamicTest("Subtraction", () -> assertEquals(6, Math.subtractExact(10, 4))),
                 dynamicTest("Division", () -> assertEquals(5, 10/2))
         ).iterator();
@@ -48,7 +48,7 @@ public class DynamicCalculatorUnitTest {
 
     @TestFactory
     Stream<DynamicTest> dynamicEvenNumberTestStream() {
-        return IntStream.iterate(0, n -> n + 1).limit(10)
+        return IntStream.iterate(0, n -> n + 2).limit(10)
                 .mapToObj(n -> dynamicTest("test" + n,
                         () -> assertTrue(n % 2 == 0)));
     }
