@@ -3,13 +3,11 @@ package com.baeldung.junit5.conditional;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledForJreRange;
-import org.junit.jupiter.api.condition.DisabledIf;
 import org.junit.jupiter.api.condition.DisabledIfEnvironmentVariable;
 import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import org.junit.jupiter.api.condition.DisabledOnJre;
 import org.junit.jupiter.api.condition.DisabledOnOs;
 import org.junit.jupiter.api.condition.EnabledForJreRange;
-import org.junit.jupiter.api.condition.EnabledIf;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import org.junit.jupiter.api.condition.EnabledOnJre;
@@ -87,19 +85,19 @@ public class ConditionalAnnotationsUnitTest {
     // Commented codes are going to work prior JUnit 5.5
 
     @Test
-    @EnabledIf("'FR' == systemProperty.get('user.country')")
+    // @EnabledIf("'FR' == systemProperty.get('user.country')")
     public void onlyFrenchPeopleWillRunThisMethod() {
         System.out.println("will run only if user.country is FR");
     }
 
     @Test
-    @DisabledIf("java.lang.System.getProperty('os.name').toLowerCase().contains('mac')")
+    // @DisabledIf("java.lang.System.getProperty('os.name').toLowerCase().contains('mac')")
     public void shouldNotRunOnMacOS() {
         System.out.println("will not run if our os.name is mac");
     }
 
     @Test
-    @EnabledIf(value = {
+    /*@EnabledIf(value = {
       "load('nashorn:mozilla_compat.js')",
       "importPackage(java.time)",
       "",
@@ -108,14 +106,14 @@ public class ConditionalAnnotationsUnitTest {
       "thisMonth.equals(february)"
     },
       engine = "nashorn",
-      reason = "Self-fulfilling: {result}")
+      reason = "Self-fulfilling: {result}")*/
     public void onlyRunsInFebruary() {
         System.out.println("this test only runs in February");
     }
 
     @Test
-    @DisabledIf("systemEnvironment.get('XPC_SERVICE_NAME') != null " +
-      "&& systemEnvironment.get('XPC_SERVICE_NAME').contains('intellij')")
+    /*@DisabledIf("systemEnvironment.get('XPC_SERVICE_NAME') != null " +
+      "&& systemEnvironment.get('XPC_SERVICE_NAME').contains('intellij')")*/
     public void notValidForIntelliJ() {
         System.out.println("this test will run if our ide is INTELLIJ");
     }
@@ -135,7 +133,7 @@ public class ConditionalAnnotationsUnitTest {
 
     @Target(ElementType.METHOD)
     @Retention(RetentionPolicy.RUNTIME)
-    @DisabledIf("Math.random() >= 0.5")
+    // @DisabledIf("Math.random() >= 0.5")
     @interface CoinToss {
     }
 
