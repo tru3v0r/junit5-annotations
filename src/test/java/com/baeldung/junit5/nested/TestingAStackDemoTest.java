@@ -1,7 +1,5 @@
 package com.baeldung.junit5.nested;
 
-
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -16,7 +14,7 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("A stack")
-class TestingAStackDemo {
+class TestingAStackDemoTest {
 
     Stack<Object> stack;
 
@@ -26,9 +24,15 @@ class TestingAStackDemo {
         new Stack<>();
     }
 
+    @Test
+    @DisplayName("is instantiated with new Stack()")
+    void isInstantiatedWithNewCopy() {
+        new Stack<>();
+    }
+
     @Nested
     @DisplayName("when new")
-    class WhenNew {
+    class WhenNewTest {
 
         @BeforeEach
         void createNewStack() {
@@ -55,7 +59,7 @@ class TestingAStackDemo {
 
         @Nested
         @DisplayName("after pushing an element")
-        class AfterPushing {
+        class AfterPushingTest {
 
             String anElement = "an element";
 
