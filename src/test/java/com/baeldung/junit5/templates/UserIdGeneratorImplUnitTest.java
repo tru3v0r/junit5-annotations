@@ -3,7 +3,7 @@ package com.baeldung.junit5.templates;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UserIdGeneratorImplUnitTest {
     @TestTemplate
@@ -12,6 +12,7 @@ public class UserIdGeneratorImplUnitTest {
         UserIdGenerator userIdGenerator = new UserIdGeneratorImpl(testCase.isFeatureEnabled());
 
         String actualUserId = userIdGenerator.generate(testCase.getFirstName(), testCase.getLastName());
+
 
         assertTrue(actualUserId.equals(testCase.getExpectedUserId()));
     }
