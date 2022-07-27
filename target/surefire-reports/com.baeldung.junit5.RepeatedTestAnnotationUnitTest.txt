@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.baeldung.junit5.RepeatedTestAnnotationUnitTest
--------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 sec - in com.baeldung.junit5.RepeatedTestAnnotationUnitTest
