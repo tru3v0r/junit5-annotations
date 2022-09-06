@@ -85,7 +85,7 @@ class TestingAStackDemoTest {
             @DisplayName("returns the element when peeked but remains not empty")
             void returnElementWhenPeeked() {
                 assertEquals(anElement, stack.peek());
-                assertFalse(stack.isEmpty());
+                assertTrue(stack.isEmpty());
             }
         }
     }
